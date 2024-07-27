@@ -1,0 +1,26 @@
+.auth-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 2rem;
+    max-width: 400px;
+  }
+.auth-form-container h1 {
+    margin-bottom: 1rem;
+  }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+}
+
+mat-card {
+  width: 100%;
+  max-width: 700px; /* Adjust as needed */
+}
+
+  

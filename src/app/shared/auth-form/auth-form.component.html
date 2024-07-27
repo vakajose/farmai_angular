@@ -1,0 +1,61 @@
+<!-- <div class="auth-form-container">
+    
+
+    <h1>Bienvenido a FARM AI</h1>
+    <form [formGroup]="authForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill">
+        <mat-label>Username</mat-label>
+        <input matInput formControlName="username" required>
+        <mat-error *ngIf="authForm.get('username')?.hasError('required')">Username es requerido</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput [type]="'password'" formControlName="password" required>
+        <mat-error *ngIf="authForm.get('password')?.hasError('required')">Contraseña es requerida</mat-error>
+        <mat-error *ngIf="authForm.get('password')?.hasError('minlength')">Contraseña debe ser como minimo de 8 caracteres</mat-error>
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary" type="submit">
+        {{ isLoginMode ? 'Login' : 'Register' }}
+      </button>
+    </form>
+  
+  </div> -->
+  <div class="container">
+    <mat-card appearance="outlined">
+      <mat-card-header>
+        <mat-card-title>
+          Bienvenido a FARM AI
+        </mat-card-title>
+        <mat-card-subtitle>
+          {{ isLoginMode ? 'Login' : 'Register' }}
+          </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <form id="auth-form" [formGroup]="authForm" (ngSubmit)="onSubmit()">
+          <mat-form-field appearance="fill">
+            <mat-label>Username</mat-label>
+            <input matInput formControlName="username" required>
+            <mat-error *ngIf="authForm.get('username')?.hasError('required')">Username es requerido</mat-error>
+          </mat-form-field>
+    
+          <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput [type]="'password'" formControlName="password" required>
+            <mat-error *ngIf="authForm.get('password')?.hasError('required')">Contraseña es requerida</mat-error>
+            <mat-error *ngIf="authForm.get('password')?.hasError('minlength')">Contraseña debe ser como minimo de 8 caracteres</mat-error>
+          </mat-form-field>
+        </form>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" form="auth-form" type="submit">
+          {{ isLoginMode ? 'Login' : 'Register' }}
+        </button>
+        <button mat-button color="accent" (click)="switchMode()">
+          {{ isLoginMode ? 'Switch to Register' : 'Switch to Login' }}
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  
