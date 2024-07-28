@@ -1,0 +1,40 @@
+<div class="create-parcela-container">
+    <div class="form-container">
+      <form [formGroup]="parcelaForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+          <mat-label>Nombre</mat-label>
+          <input matInput formControlName="nombre" required>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Próximo Monitoreo</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="proximo_monitoreo" required>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+  
+        <div class="puntos-list">
+          <h3>Ubicación</h3>
+          <ol>
+            <li *ngFor="let punto of ubicacion; let i = index">{{ punto.latitude }}, {{ punto.longitude }}</li>
+          </ol>
+        </div>
+  
+        <button mat-raised-button color="primary" type="submit">Crear Parcela</button>
+      </form>
+    </div>
+    
+    <div class="map-container">
+        <div class="map-buttons">
+            <button mat-raised-button color="warn" (click)="clearPolygon()">Limpiar</button>
+            <button mat-raised-button color="primary" (click)="completePolygon()">Completar</button>
+            <button mat-flat-button color="tertiary" (click)="back()">Volver</button>
+          </div>
+        <div id="map" class="map-container">
+            <google-map height="500px" width="100%" [options]="mapOptions" (mapClick)="addPoint($event)">
+              <map-polygon [paths]="polygonPath"></map-polygon>
+            </google-map>
+        </div>
+    </div>
+
+</div>

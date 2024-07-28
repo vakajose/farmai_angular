@@ -1,2 +1,17 @@
-<app-navigation></app-navigation>
-<p>lands works!</p>
+<div class="lands-container">
+    <div class="grid-container">
+      <app-land-card
+        *ngFor="let parcela of parcelas"
+        [parcela]="parcela"
+        (detail)="onDetail(parcela)"
+        (history)="onHistory(parcela)"
+        (analyze)="onAnalyze(parcela)"
+      ></app-land-card>
+      <mat-card class="create-card">
+        <button mat-raised-button color="secondary" (click)="createParcela()">
+          Crear Parcela
+        </button>
+      </mat-card>
+    </div>
+  </div>
+  

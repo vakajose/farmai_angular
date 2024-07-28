@@ -1,0 +1,28 @@
+.create-parcela-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.create-parcela-container .map-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container {
+    width: 30%;
+    padding: 20px;
+}
+
+.map-container {
+    width: 90%;
+    height: 500px;
+    margin: 20px;
+}
+
+.map-buttons {
+    display: flex;
+    justify-content: left;
+    width: 65%;
+    margin: 20px;
+}

@@ -1,0 +1,16 @@
+<nav class="navbar">
+  <div class="navbar-left">
+	<span class="app-name">FARM AI</span>
+  </div>
+  <div class="navbar-center">
+	<ul class="nav-menu">
+	  <li><a routerLink="/lands">Parcelas</a></li>
+	  <!-- <li><a routerLink="/about">About</a></li>
+	  <li><a routerLink="/contact">Contact</a></li> -->
+	</ul>
+  </div>
+  <div class="navbar-right">
+    <span>Bienvenido {{USERNAME}}</span>
+	<button (click)="onLogout()">Logout</button>
+  </div>
+</nav>
